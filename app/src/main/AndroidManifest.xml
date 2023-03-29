@@ -13,28 +13,28 @@
         android:theme="@style/Theme.FinalApplication"
         tools:targetApi="31">
         <activity
-            android:name=".WeatherActivity"
+            android:name=".KittenPlaceholder.KittenActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".NewYorkActivity"
+            android:name=".NewYorkTimes.NewYorkActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MarsActivity"
+            android:name=".NASA.MarsActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".KittenActivity"
+            android:name=".WeatherStack.WeatherActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
