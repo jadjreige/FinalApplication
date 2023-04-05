@@ -13,6 +13,12 @@
         android:theme="@style/Theme.FinalApplication"
         tools:targetApi="31">
         <activity
+            android:name=".NASA.MarsSecondActivity"
+            android:exported="false"/>
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        <activity
             android:name=".KittenPlaceholder.KittenActivity"
             android:exported="false">
             <meta-data
