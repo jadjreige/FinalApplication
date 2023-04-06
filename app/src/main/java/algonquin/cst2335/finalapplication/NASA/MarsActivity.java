@@ -80,10 +80,12 @@ public class MarsActivity extends AppCompatActivity {
 
         marsList = new ArrayList<MarsDTO>();
 
+
         binding.search.setOnClickListener( clk -> {
 
             String input = binding.textInput.getText().toString();
 
+            marsList = new ArrayList<MarsDTO>();
 
             if (input.matches("[0-9]+")) {
 
