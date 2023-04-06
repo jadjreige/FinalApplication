@@ -5,6 +5,7 @@ import static com.android.volley.toolbox.Volley.newRequestQueue;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
@@ -36,6 +37,8 @@ public class MarsActivity extends AppCompatActivity {
     ArrayList<MarsDTO> marsList;
     MarsDTO marsDTO;
     protected RequestQueue queue = null;
+
+    private RecyclerView.Adapter myAdapter;
 
     //https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol= + DATATIME + &api_key=sUaKzNCKJSOH5w0Y15GS0Mr7JG8cwantgIuvD3Ph
 
@@ -71,6 +74,8 @@ public class MarsActivity extends AppCompatActivity {
         binding.textInput.setText(userInput);
 
         binding.recycleView.setLayoutManager(new LinearLayoutManager(this));
+
+        marsList = new ArrayList<MarsDTO>();
 
         binding.search.setOnClickListener( clk -> {
 
