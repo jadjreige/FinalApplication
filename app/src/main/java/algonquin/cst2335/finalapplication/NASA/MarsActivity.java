@@ -4,6 +4,7 @@ import static com.android.volley.toolbox.Volley.newRequestQueue;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -42,6 +43,7 @@ public class MarsActivity extends AppCompatActivity {
     protected RequestQueue queue = null;
 
     private RecyclerView.Adapter myAdapter;
+    MarsViewModel marsModel;
 
     //https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol= + DATATIME + &api_key=sUaKzNCKJSOH5w0Y15GS0Mr7JG8cwantgIuvD3Ph
 
@@ -78,6 +80,18 @@ public class MarsActivity extends AppCompatActivity {
 
         binding.recycleView.setLayoutManager(new LinearLayoutManager(this));
 
+        marsModel = new ViewModelProvider(this).get(MarsViewModel.class);
+        marsModel.selectedPhoto.observe(this, (newPhotoValue) -> {
+
+            MarsDetailsFragment photoFrag = new MarsDetailsFragment(newPhotoValue);
+
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragmentLocation, photoFrag)
+                    .addToBackStack("")
+                    .commit();
+        });
+
         marsList = new ArrayList<MarsDTO>();
 
 
@@ -85,7 +99,7 @@ public class MarsActivity extends AppCompatActivity {
 
             String input = binding.textInput.getText().toString();
 
-            marsList = new ArrayList<MarsDTO>();
+            marsList.clear();
 
             if (input.matches("[0-9]+")) {
 
@@ -119,6 +133,7 @@ public class MarsActivity extends AppCompatActivity {
 
                                     marsDTO = new MarsDTO(imgSrc, rover);
                                     marsList.add(marsDTO);
+                                    //myAdapter.notifyItemInserted(marsList.size() - 1);
                                 }
 
 
@@ -178,6 +193,14 @@ public class MarsActivity extends AppCompatActivity {
 
         public MyRowHolder(@NonNull View itemView) {
             super(itemView);
+
+            itemView.setOnClickListener(clk -> {
+
+                int position = getAdapterPosition();
+                MarsDTO selected = marsList.get(position);
+                marsModel.selectedPhoto.postValue(selected);
+
+            });
 
             image = itemView.findViewById(R.id.imageView);
             text = itemView.findViewById(R.id.roverName);
