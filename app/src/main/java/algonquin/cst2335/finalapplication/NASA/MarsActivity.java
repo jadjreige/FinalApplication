@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.google.android.material.snackbar.Snackbar;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -136,6 +137,7 @@ public class MarsActivity extends AppCompatActivity {
                                     //myAdapter.notifyItemInserted(marsList.size() - 1);
                                 }
 
+                                Snackbar.make(binding.getRoot(), marsList.size() + " Photos loaded", Snackbar.LENGTH_LONG).show();
 
                             } catch (JSONException e) {
                                 e.printStackTrace();
