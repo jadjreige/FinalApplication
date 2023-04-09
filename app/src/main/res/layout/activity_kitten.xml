@@ -7,12 +7,95 @@
     tools:context=".KittenPlaceholder.KittenActivity">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/width"
+        android:layout_width="150dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="44dp"
+        android:text="Enter picture width"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/widthEditText"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:inputType="number"
+        android:maxLength="3"
+        android:textSize="25sp"
+        app:layout_constraintStart_toEndOf="@+id/height"
+        app:layout_constraintTop_toBottomOf="@+id/heightEditText" />
+
+    <EditText
+        android:id="@+id/heightEditText"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:inputType="number"
+        android:maxLength="3"
+        android:textSize="25sp"
+        app:layout_constraintStart_toEndOf="@+id/width"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/height"
+        android:layout_width="150dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="24dp"
+        android:text="Enter picture height"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/width" />
+
+    <Button
+        android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Kitten Placeholder Application"
+        android:layout_marginTop="20dp"
+        android:text="Find Kittens"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.615"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/widthEditText" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/saveButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/submit"
+        tools:visibility="invisible" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="Add image to favourites"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:visibility="invisible" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/saveButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/submit"
+        tools:visibility="invisible" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
