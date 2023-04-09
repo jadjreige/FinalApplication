@@ -1,43 +1,37 @@
 package algonquin.cst2335.finalapplication.WeatherStack;
 
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import algonquin.cst2335.finalapplication.R;
-import algonquin.cst2335.finalapplication.WeatherStack.fragments.HomeFragment;
+import algonquin.cst2335.finalapplication.WeatherStack.fragments.FavouriteListFragment;
 
-
-/***
- * @Author Imandeep
- * version 1
- *  this is main activity which load home fragment and others
- */
-public class WeatherActivity extends AppCompatActivity {
+public class FavouriteActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_weather);
+        setContentView(R.layout.activity_favourite);
 
-        // Load home fragment
+        // Load favourite fragment
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.frameLayout, new HomeFragment())
+                .add(R.id.frameLayout, new FavouriteListFragment())
                 .commit();
-
     }
+
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.mainactivity_options_menu, menu);
+        getMenuInflater().inflate(R.menu.favorite_options_menu, menu);
         return true;
     }
 
@@ -45,15 +39,6 @@ public class WeatherActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId())
         {
-            // favourite icon selected
-            case R.id.action_favourite:
-                // start Favourite activity
-                Intent intent = new Intent(
-                        WeatherActivity.this,
-                        FavouriteActivity.class);
-                startActivity(intent);
-
-                return true;
             case R.id.action_help:
                 showHelpDialog();
                 return true;
