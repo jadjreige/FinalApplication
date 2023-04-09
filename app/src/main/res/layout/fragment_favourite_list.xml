@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.FavouriteListFragment"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <EditText
+        android:id="@+id/edtSearchCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:drawableLeft="@android:drawable/ic_menu_search"
+        android:drawableTint="@color/orange"
+        android:drawablePadding="10dp"
+        android:hint="@string/type_city_name"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
+        android:textColor="@color/teal_200"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"/>
+
+</LinearLayout>

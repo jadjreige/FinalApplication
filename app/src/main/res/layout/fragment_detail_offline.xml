@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.1" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtCityName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_toLeftOf="@+id/imgWeatherIcon"
+                    android:drawableLeft="@drawable/ic_location_pin"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="@color/gray"
+                    android:textColor="@color/teal_200"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtDataTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtCityName"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/orange"
+                    android:textSize="17sp" />
+
+
+                <ImageView
+                    android:id="@+id/imgWeatherIcon"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentRight="true"/>
+            </RelativeLayout>
+
+
+`
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/txtTemperature"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/orange_dark"
+                        android:textSize="50sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/txtTemperature"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/txtTemperature"
+                        android:paddingTop="10dp"
+                        android:text="O"
+                        android:textColor="@color/orange_dark"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <include layout="@layout/layout_detail"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

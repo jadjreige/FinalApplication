@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView android:layout_width="match_parent"
+    android:layout_height="500dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    app:cardBackgroundColor="@color/gray_2"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true"
+    android:outlineAmbientShadowColor="@color/gray"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/details"
+            android:textSize="17sp"
+            android:textColor="@color/gray"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/observed_time"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/gray"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/txtObservedTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/precipitation"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/gray"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/txtPrecipitation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/humidity"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/gray"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/txtHumidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/uv_index"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/gray"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/txtUVindex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pressure"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/gray"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/txtPressure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/visibility"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/gray"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/txtVisibility"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="17sp"
+            android:textColor="@color/gray"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wind_speed"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/gray"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/txtWindSpeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wind_degree"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/gray"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/txtWindDegree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wind_direction"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/gray"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/txtWindDirection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cloud_cover"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/gray"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/txtCloudCover"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/feels_like_temp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/gray"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/txtFeelLike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/weather_description"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/gray"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/txtweatherDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>

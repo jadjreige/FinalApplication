@@ -1,3 +1,41 @@
 <resources>
     <string name="app_name">FinalApplication</string>
+    <string name="weather">Weather</string>
+    <string name="stack">Stack</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="type_city_name">Type city name...</string>
+    <string name="search">search</string>
+    <string name="weather_">WEATHER</string>
+    <string name="of_your_city">of your city.</string>
+    <string name="details">DETAILS</string>
+    <string name="observed_time">Observed Time</string>
+    <string name="precipitation">Precipitation</string>
+    <string name="humidity">Humidity</string>
+    <string name="uv_index">UV Index</string>
+    <string name="pressure">Pressure</string>
+    <string name="visibility">Visibility</string>
+    <string name="wind_speed">Wind Speed</string>
+    <string name="wind_degree">Wind Degree</string>
+    <string name="wind_direction">Wind Direction</string>
+    <string name="cloud_cover">Cloud Cover</string>
+    <string name="feels_like_temp">Feels Like Temp.</string>
+    <string name="weather_description">Weather Description</string>
+    <string name="save_detail">Save Detail</string>
+    <string name="please_enter_city">Please enter city name and try again.</string>
+    <string name="weather_data_saved_message">Weather data saved successfully...!</string>
+    <string name="milimeter"> Millimeter</string>
+    <string name="milibar"> Millibar</string>
+    <string name="kilometer"> Kilometer</string>
+    <string name="kmph"> KMPH</string>
+    <string name="celsius"> Cel.</string>
+    <string name="help">Help</string>
+    <string name="confirmation_delete">Do you want to delete this record from database?</string>
+    <string name="confirmation">Confirmation</string>
+    <string name="yes">Yes</string>
+    <string name="favourite_list">Favourite List</string>
+    <string name="local_weather_stack">Local WeatherStack</string>
+    <string name="help_message">1. This application shows the home screen after showing Splash screen.\n2. In home screen user can enter the name of any location whose weather detail he wants to know.\n3. As user enter the location name and search, if weather data found on server it takes to next screen to show the details regarding weather.\n4. In detail screen there is save button at last by pressing that user can save location name and relavant weather data into local database.\n 5. The user can check saved cities with weather data for sepecific date in Favourite screen by pressing the start (Favourite) button from toolbar\n 6. User can delete the record from the local database by pressing long on the item in a list.\n 7. User can check detail of weather of a specific city normal pressing that item in  a list.</string>
+    <string name="no">No</string>
+    <string name="record_deleted">Record deleted Successfully</string>
 </resources>

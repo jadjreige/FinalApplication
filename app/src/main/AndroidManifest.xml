@@ -50,6 +50,25 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+
+        <activity
+            android:name=".WeatherStack.FavouriteActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:name=".WeatherStack.SplashActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
