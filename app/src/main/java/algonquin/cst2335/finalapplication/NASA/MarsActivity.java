@@ -7,8 +7,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
@@ -32,7 +34,10 @@ import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
+import algonquin.cst2335.finalapplication.MainActivity;
 import algonquin.cst2335.finalapplication.R;
 import algonquin.cst2335.finalapplication.databinding.ActivityMarsBinding;
 import algonquin.cst2335.finalapplication.databinding.ViewMarsResultsBinding;
@@ -45,8 +50,11 @@ public class MarsActivity extends AppCompatActivity {
 
     private RecyclerView.Adapter myAdapter;
     MarsViewModel marsModel;
+    MarsDAO phDAO;
+    int position;
+    ImageView image;
+    TextView text;
 
-    //https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol= + DATATIME + &api_key=sUaKzNCKJSOH5w0Y15GS0Mr7JG8cwantgIuvD3Ph
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -59,7 +67,43 @@ public class MarsActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        return super.onOptionsItemSelected(item);
+        super.onOptionsItemSelected(item);
+
+        switch (item.getItemId()) {
+
+            case R.id.save:
+
+                MarsDTO ph = marsList.get(position);
+
+                Executor thread = Executors.newSingleThreadExecutor();
+                thread.execute(() ->
+                {
+                    long id = phDAO.insertPhoto(ph);
+                    ph.id = (int) id;
+
+                });
+
+                Toast.makeText(MarsActivity.this, "Saved photo", Toast.LENGTH_SHORT).show();
+
+                break;
+
+            case R.id.about:
+
+                Toast.makeText(MarsActivity.this, "Nasa Mars Rover photos by Jad Jreige", Toast.LENGTH_SHORT).show();
+
+                break;
+
+            case R.id.showSaved:
+
+                Intent dataPage = new Intent(MarsActivity.this, MarsDataActivity.class);
+
+                startActivity(dataPage);
+
+                break;
+
+        }
+
+        return true;
     }
 
     @Override
@@ -73,6 +117,8 @@ public class MarsActivity extends AppCompatActivity {
 
         setSupportActionBar(binding.toolbar);
 
+        PhotoDatabase db = Room.databaseBuilder(getApplicationContext(), PhotoDatabase.class, "database-name").build();
+        phDAO = db.mDAO();
 
         SharedPreferences prefs = getSharedPreferences("MyMarsData", Context.MODE_PRIVATE);
 
@@ -171,8 +217,8 @@ public class MarsActivity extends AppCompatActivity {
             @Override
             public void onBindViewHolder(@NonNull MyRowHolder holder, int position) {
                 MarsDTO obj = marsList.get(position);
-                holder.text.setText(obj.getName());
-                Picasso.get().load(obj.getImageUrl()).into(holder.image);
+                text.setText(obj.getName());
+                Picasso.get().load(obj.getImageUrl()).into(image);
             }
 
             @Override
@@ -190,15 +236,12 @@ public class MarsActivity extends AppCompatActivity {
 
     class MyRowHolder extends RecyclerView.ViewHolder {
 
-        ImageView image;
-        TextView text;
-
         public MyRowHolder(@NonNull View itemView) {
             super(itemView);
 
             itemView.setOnClickListener(clk -> {
 
-                int position = getAdapterPosition();
+                position = getAdapterPosition();
                 MarsDTO selected = marsList.get(position);
                 marsModel.selectedPhoto.postValue(selected);
 
