@@ -10,6 +10,7 @@ import android.widget.Button;
 import algonquin.cst2335.finalapplication.KittenPlaceholder.KittenActivity;
 import algonquin.cst2335.finalapplication.NASA.MarsActivity;
 import algonquin.cst2335.finalapplication.NewYorkTimes.NewYorkActivity;
+import algonquin.cst2335.finalapplication.WeatherStack.SplashActivity;
 import algonquin.cst2335.finalapplication.WeatherStack.WeatherActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         weather.setOnClickListener( clk -> {
 
-            Intent weatherPage = new Intent(MainActivity.this, WeatherActivity.class);
+            Intent weatherPage = new Intent(MainActivity.this, SplashActivity.class);
 
             startActivity(weatherPage);
         });

@@ -68,6 +68,7 @@ public class FavouriteListFragment extends Fragment implements TextWatcher {
     private void initialize(){
         edtSeach = rootView.findViewById(R.id.edtSearchCity);
         edtSeach.addTextChangedListener(this);
+
         recyclerView = rootView.findViewById(R.id.recyclerView);
         listWeathers = new ArrayList<>();
         listWeathersNoChange = new ArrayList<>();

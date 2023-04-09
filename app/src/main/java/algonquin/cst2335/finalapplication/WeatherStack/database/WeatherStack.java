@@ -5,6 +5,7 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 /**
+ * @author Imandeep SIngh Sidhu
  * This class represents the  weatherstack object and its corresponding attributes.
  */
 
