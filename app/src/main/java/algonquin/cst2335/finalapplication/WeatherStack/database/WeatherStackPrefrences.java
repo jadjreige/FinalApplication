@@ -13,7 +13,7 @@ public class WeatherStackPrefrences {
 
     /** the private constructor **/
      private WeatherStackPrefrences(Context context){
-        sharedPreferences = context.getSharedPreferences("Cocktail_pref", Context.MODE_PRIVATE);
+        sharedPreferences = context.getSharedPreferences("Shared_pref", Context.MODE_PRIVATE);
      }
 
     /** the method to get instance of this class **/
