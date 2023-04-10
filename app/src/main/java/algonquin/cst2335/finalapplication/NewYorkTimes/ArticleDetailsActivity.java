@@ -3,6 +3,7 @@ package algonquin.cst2335.finalapplication.NewYorkTimes;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.webkit.WebView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -43,7 +44,7 @@ public class ArticleDetailsActivity extends AppCompatActivity {
         publicationDateTextView = findViewById(R.id.publication_date);
 
         Intent intent = getIntent();
-
+        WebView webView = findViewById(R.id.web_view);
 
         // Retrieve the data from the intent
         String headline = intent.getStringExtra("headline");
@@ -55,6 +56,9 @@ public class ArticleDetailsActivity extends AppCompatActivity {
             headlineTextView.setText(headline);
             urlTextView.setText(webUrl);
             publicationDateTextView.setText(pubDate);
+        if (webUrl != null) {
+            webView.loadUrl(webUrl);
+        }
 
     }
 }
