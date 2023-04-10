@@ -137,13 +137,7 @@ public class MarsActivity extends AppCompatActivity {
             case R.id.about:
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(MarsActivity.this);
-                builder.setMessage("To use this application you need to enter a number between 1 and 1000 to load pictures from the rover that were taken on a certain day.\n" +
-                                "\n" +
-                                "By pressing on a picture, you will get an expanded version of that picture with the image URL that you can press to take you to the browser.\n" +
-                                "\n" +
-                                "Once you expand the picture, you can also save it to the database of favorites and for offline viewing.\n" +
-                                "\n" +
-                                "Finally, you can press the toolbar option to show your selected favorites and remove them.")
+                builder.setMessage(R.string.helpMars)
                         .setTitle("Help")
 
                         .setNegativeButton("ok", (dialog, cl) -> {

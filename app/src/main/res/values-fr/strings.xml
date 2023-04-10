@@ -13,4 +13,14 @@
     <string name="existKitten">L\'image est déjà dans les favoris.</string>
     <string name="removeKitten">Supprimer</string>
     <string name="deletedKitten">Chaton supprimé des favoris</string>
+
+    <string name="marsname">PHOTOS NASA MARS</string>
+    <string name="search">Recherche</string>
+    <string name="enterANumberMars">Entrez un nombre entre 1 et 1000</string>
+    <string name="helpMars">"Pour utiliser cette application, vous devez entrer un nombre entre 1 et 1000 pour charger les photos du rover qui ont été prises un certain jour.\n""\n""En appuyant sur une image, vous obtiendrez une version agrandie de cette image avec l'URL de l'image sur laquelle vous pouvez appuyer pour accéder au navigateur.\n""\n""Une fois que vous avez développé l'image, vous pouvez également l'enregistrer dans la base de données des favoris et pour une visualisation hors ligne.\n""\n""Enfin, vous pouvez appuyer sur l'option de la barre d'outils pour afficher les favoris sélectionnés et les supprimer."</string>
+    <string name="saveMars">Enregistrer</string>
+    <string name="showSaveMars">Afficher les photos sauvegardées</string>
+    <string name="deleteMars">"Voulez-vous supprimer la photo du rover "</string>
+
+
 </resources>

@@ -6,20 +6,20 @@
     <item
         android:id="@+id/save"
         android:icon="@android:drawable/ic_menu_save"
-        android:title="Save"
+        android:title="@string/saveMars"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/about"
         android:icon="@drawable/mars_icon"
-        android:title="Help"
+        android:title="@string/toolbarHelpKitten"
         android:visible="true"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/showSaved"
         android:icon="@drawable/mars_icon"
-        android:title="Show Saved Photos"
+        android:title="@string/showSaveMars"
         android:visible="true"
         app:showAsAction="never" />
 
