@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Nos reportages</string>
+    <string name="help_title" translatable="true">Aider</string>
+    <string name="help_message" translatable="true">Entrez un terme de recherche dans le champ de saisie et appuyez sur le bouton "Rechercher" pour trouver des articles du New York Times. Cliquez sur un article dans les résultats de recherche pour afficher plus de détails.</string>
+    <string name="ok" translatable="true">D\'accord</string>
+    <string name="SEARCH" translatable="true">Recherche</string>
+</resources>
