@@ -10,9 +10,12 @@ import androidx.room.Room;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -68,6 +71,8 @@ public class KittenActivity extends AppCompatActivity {
     KittenImageViewModel kittenModel;
     List<String> urls = null;
     KittenImagesBinding imageBinding;
+
+
 
 
     @Override
@@ -155,13 +160,27 @@ public class KittenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
-
         queue = Volley.newRequestQueue(this);
 
 
         binding = ActivityKittenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        // Get a SharedPreferences instance
+        SharedPreferences sharedPreferences = getSharedPreferences("my_preferences", Context.MODE_PRIVATE);
+
+        // Store the strings
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        if(sharedPreferences.getString("width", "") == null || sharedPreferences.getString("height", "")== null) {
+
+
+            editor.putString("width", "5");
+            editor.putString("height", "5");
+            editor.commit();
+        }
+        // Retrieve the strings
+        binding.widthEditText.setText(sharedPreferences.getString("width", "").toString());
+        binding.heightEditText.setText(sharedPreferences.getString("height", "").toString());
 
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
         kittenModel = new ViewModelProvider(this).get(KittenImageViewModel.class);
@@ -179,8 +198,12 @@ public class KittenActivity extends AppCompatActivity {
                 try {
                     width = Integer.parseInt(binding.widthEditText.getText().toString());
                     height = Integer.parseInt(binding.heightEditText.getText().toString());
+
                 }catch (Exception e){}
             }
+            editor.putString("width", String.valueOf(width));
+            editor.putString("height", String.valueOf(height));
+            editor.commit();
 
             URL = new StringBuilder().append("https://placekitten.com/").append(width).append("/").append(height).toString();
             imgReq = new ImageRequest(URL, new Response.Listener<Bitmap>() {
