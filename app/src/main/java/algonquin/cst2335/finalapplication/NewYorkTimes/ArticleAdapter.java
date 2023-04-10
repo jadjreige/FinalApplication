@@ -12,7 +12,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import algonquin.cst2335.gohe0008.R;
+import algonquin.cst2335.finalapplication.R;
+
 
 /**
  * ArticleAdapter class is a custom RecyclerView.Adapter to display a list of articles.

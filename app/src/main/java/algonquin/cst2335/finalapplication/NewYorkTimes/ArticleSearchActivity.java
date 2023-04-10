@@ -24,7 +24,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import algonquin.cst2335.gohe0008.R;
+import algonquin.cst2335.finalapplication.R;
+
 
 /**
  * ArticleSearchActivity class retrieves and displays a list of articles based on a search term.

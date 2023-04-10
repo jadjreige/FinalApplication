@@ -7,7 +7,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import algonquin.cst2335.gohe0008.R;
+import algonquin.cst2335.finalapplication.R;
+
 
 /**
  * ArticleDetailsActivity class displays the details of a selected article,

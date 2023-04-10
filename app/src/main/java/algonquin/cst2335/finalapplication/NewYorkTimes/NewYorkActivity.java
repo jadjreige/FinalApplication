@@ -1,6 +1,7 @@
 
 package algonquin.cst2335.finalapplication.NewYorkTimes;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -14,7 +15,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import algonquin.cst2335.gohe0008.R;
+import algonquin.cst2335.finalapplication.R;
+
 
 /**
  * MainActivity class that allows the user to search for articles using a search term.
@@ -42,6 +44,7 @@ public class NewYorkActivity extends AppCompatActivity {
      * and sets onClickListener for the search button.
      * @param savedInstanceState
      */
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
