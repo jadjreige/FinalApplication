@@ -67,6 +67,7 @@ public class KittenActivity extends AppCompatActivity {
     List<Bitmap> kittenImages ;
     KittenImageViewModel kittenModel;
     List<String> urls = null;
+    KittenImagesBinding imageBinding;
 
 
     @Override
@@ -88,7 +89,7 @@ public class KittenActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.help:
                 AlertDialog.Builder builder = new AlertDialog.Builder(KittenActivity.this);
-                builder.setMessage(R.string.help).setPositiveButton(null, null).
+                builder.setMessage(R.string.helpKitten).setPositiveButton(null, null).
                         setNegativeButton("Okay", (dialog, cl) -> {
                         }).setTitle("Help").create().show();
                 break;
@@ -221,7 +222,7 @@ public class KittenActivity extends AppCompatActivity {
                     String name1 = favKittens.get(i).getFileName();
                     if(name1.equals(finalName)){
                         exist = true;
-                        Toast.makeText(KittenActivity.this, "Image already saved in favourites", Toast.LENGTH_SHORT).show();break;
+                        Toast.makeText(KittenActivity.this, R.string.existKitten, Toast.LENGTH_SHORT).show();break;
                     }
                 }
                 if(!exist) {
@@ -229,7 +230,7 @@ public class KittenActivity extends AppCompatActivity {
                         kDAO.insertKitten(kitten);
                     }).start();
                 }
-            Toast.makeText(KittenActivity.this, "Image added to favourites", Toast.LENGTH_SHORT).show();
+            Toast.makeText(KittenActivity.this, R.string.addedKitten, Toast.LENGTH_SHORT).show();
         });
 
         //binding.imageButton.setOnClickListener(click -> {
@@ -285,7 +286,7 @@ public class KittenActivity extends AppCompatActivity {
                 kDAO.deleteKitten(deletedKitten);
                 }).start();
                 myAdapter.notifyItemRemoved(getAbsoluteAdapterPosition());
-                Snackbar.make(imageButton, "Kitten deleted from favourites", Snackbar.LENGTH_LONG)
+                Snackbar.make(imageButton, R.string.deletedKitten, Snackbar.LENGTH_LONG)
                         .setAction("Undo", click -> {
 
                             new Thread(() -> {
@@ -298,7 +299,13 @@ public class KittenActivity extends AppCompatActivity {
 
             });
             imageButton.setOnClickListener(clk -> {
+
                 int position = getAbsoluteAdapterPosition();
+                Kitten fragKitten = favKittens.get(position);
+                KittenDetailsFragment fragment = new KittenDetailsFragment(fragKitten);
+                getSupportFragmentManager().beginTransaction().replace(R.id.KittenFragmentLocation, fragment)
+                        .addToBackStack("").commit();
+
             });
         }
     }

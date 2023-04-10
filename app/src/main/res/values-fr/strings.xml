@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FinalApplication</string>
+    <string name="helpKitten">- Remplissez les champs largeur et hauteur avec des nombres compris entre 0 et 999, puis appuyez sur « Trouver un chaton » pour obtenir une image de chaton. </string>
+    <string name="widthKitten">Largeur de l\'image :</string>
+    <string name="heightKitten">Hauteur de l\'image :</string>
+    <string name="findKittens">Trouver des chatons</string>
+    <string name="toolbarHelpKitten">Aide</string>
+    <string name="toolViewKitten">Voir mes chatons</string>
+    <string name="toolbarLookKitten">Trouver des chatons nouveaux</string>
+    <string name="favouriteKitten">Ajouter l\'image aux favoris</string>
+    <string name="addedKitten">Image ajoutée aux favoris</string>
+    <string name="existKitten">L\'image est déjà dans les favoris.</string>
+    <string name="removeKitten">Supprimer</string>
+    <string name="deletedKitten">Chaton supprimé des favoris</string>
+</resources>

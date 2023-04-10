@@ -7,18 +7,18 @@
     <item
         android:id="@+id/help"
         android:enabled="true"
-        android:title="Help"
+        android:title="@string/toolbarHelpKitten"
         android:visible="true"
         app:showAsAction="always"
         />
     <item
         android:id="@+id/favourite1"
         android:enabled="true"
-        android:title="View my kittens"
+        android:title="@string/toolViewKitten"
         android:visible="true"
         app:showAsAction="never" />
     <item
         android:id="@+id/newImages"
-        android:title="Search new images" />
+        android:title="@string/toolbarLookKitten" />
 
 </menu>
