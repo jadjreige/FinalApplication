@@ -51,7 +51,7 @@ public class MarsActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
 
-        getMenuInflater().inflate(R.menu.mars_menu, menu);
+        //getMenuInflater().inflate(R.menu.mars_menu, menu);
 
         return true;
     }
