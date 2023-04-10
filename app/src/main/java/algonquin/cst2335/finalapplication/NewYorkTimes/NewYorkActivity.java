@@ -51,7 +51,7 @@ public class NewYorkActivity extends AppCompatActivity {
         setContentView(R.layout.activity_new_york);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar);
 
         searchTermEditText = findViewById(R.id.search_term_edit_text);
         searchButton = findViewById(R.id.search_button);

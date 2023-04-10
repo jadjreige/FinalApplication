@@ -23,4 +23,9 @@
     <string name="deleteMars">"Voulez-vous supprimer la photo du rover "</string>
 
 
+    <string name="help_title" translatable="true">Aider</string>
+    <string name="help_message2" translatable="true">Entrez un terme de recherche dans le champ de saisie et appuyez sur le bouton "Rechercher" pour trouver des articles du New York Times. Cliquez sur un article dans les résultats de recherche pour afficher plus de détails.</string>
+    <string name="ok" translatable="true">D\'accord</string>
+    <string name="SEARCH" translatable="true">Recherche</string>
+
 </resources>
