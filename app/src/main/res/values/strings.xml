@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">FinalApplication</string>
+    <string name="help">- Populate width and height fields with number between 0-999 then press
+        on find kitten to get a kitten image. \n\n - Press on add to favourites to save image on your phone.
+        \n\n
+    - Click on "View my kittens" to see all the kitten images saved on your phone. \n\n - Press on a kitten from the list to load to screen or delete from device. </string>
 </resources>

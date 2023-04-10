@@ -40,4 +40,5 @@ public class Kitten {
         return width;
     }
     public int getHeight(){return height;}
+
 }

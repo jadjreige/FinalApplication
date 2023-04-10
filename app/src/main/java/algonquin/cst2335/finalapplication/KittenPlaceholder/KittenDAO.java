@@ -16,6 +16,7 @@ public interface KittenDAO {
     @Query("Select * from Kitten")
     public List<Kitten> getAllKittens();
 
+
     @Delete
     void deleteKitten(Kitten k);
 }
