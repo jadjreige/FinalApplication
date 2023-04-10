@@ -118,7 +118,9 @@ public class ArticleSearchActivity extends AppCompatActivity implements ArticleA
      */
     @Override
     public void onArticleClick(int position) {
-        Article article = (Article) articleAdapter.getArticles().get(position);
+//        Article article = (Article) articleAdapter.getArticles().get(0).get(position);
+        List<Article> articleList = (List<Article>) articleAdapter.getArticles().get(0);
+        Article article = articleList.get(position);
         Intent intent = new Intent(this, ArticleDetailsActivity.class);
 
         intent.putExtra("headline", article.getHeadline());
