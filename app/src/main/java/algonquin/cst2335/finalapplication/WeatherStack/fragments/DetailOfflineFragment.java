@@ -16,6 +16,7 @@ import algonquin.cst2335.finalapplication.WeatherStack.database.WeatherStack;
 /**
  * @author Imandeep Singh Sidhu
  * version 1
+ * This class holds all the data of favourites page
  */
 public class DetailOfflineFragment extends Fragment {
 

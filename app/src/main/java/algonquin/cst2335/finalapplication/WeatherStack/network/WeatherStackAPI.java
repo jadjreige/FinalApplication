@@ -17,8 +17,6 @@ import algonquin.cst2335.finalapplication.WeatherStack.interfaces.RestApiCallbac
 
 /**
  * Imandeep Singh Sidhu
- * 31/03/2023
- *
  * this class handles network calls that retreive the data from server
  * and loads into the application
  */

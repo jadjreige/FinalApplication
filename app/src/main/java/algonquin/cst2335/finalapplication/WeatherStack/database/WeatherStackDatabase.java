@@ -6,6 +6,10 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
+/**
+ * @author Imandeep Singh SIdhu
+ * This class establishes connection with room database
+ */
 @Database(entities = {WeatherStack.class}, version= 1)
 public abstract class WeatherStackDatabase extends RoomDatabase {
 

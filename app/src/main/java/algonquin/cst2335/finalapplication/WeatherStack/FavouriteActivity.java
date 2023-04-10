@@ -12,6 +12,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import algonquin.cst2335.finalapplication.R;
 import algonquin.cst2335.finalapplication.WeatherStack.fragments.FavouriteListFragment;
 
+/**
+ * @author Imandeep Singh Sidhu
+ * This class basically shows favourite activity along with
+ * menu items
+ */
+
 public class FavouriteActivity extends AppCompatActivity {
 
     @Override

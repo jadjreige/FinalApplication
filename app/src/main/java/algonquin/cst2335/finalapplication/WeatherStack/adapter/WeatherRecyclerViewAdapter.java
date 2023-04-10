@@ -18,6 +18,13 @@ import algonquin.cst2335.finalapplication.R;
 import algonquin.cst2335.finalapplication.WeatherStack.database.WeatherStack;
 import algonquin.cst2335.finalapplication.WeatherStack.interfaces.RecyclerItemClickCallback;
 
+/**
+ * @author Imandeep Singh Sidhu
+ * This class basically sends ad sets data in
+ * recyclerview of favourite fragment
+ */
+
+
 public class WeatherRecyclerViewAdapter extends RecyclerView.Adapter<WeatherRecyclerViewAdapter.ViewHolder> {
 
     /** the context refrence **/

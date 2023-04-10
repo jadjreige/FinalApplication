@@ -10,7 +10,8 @@ import java.util.List;
 /**
  * @author Imandeep Singh Sidhu
  * version 1
- * This DAO interface represents
+ * This DAO interface represents methods
+ * for deletion and insertion
  */
 @Dao
 public interface WeatherStackDAO {

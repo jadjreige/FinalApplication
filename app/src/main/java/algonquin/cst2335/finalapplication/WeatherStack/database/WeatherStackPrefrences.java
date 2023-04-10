@@ -3,6 +3,11 @@ package algonquin.cst2335.finalapplication.WeatherStack.database;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+/**
+ * @author Imandeep Singh Sidhu
+ * This class holds the concept of shared prefrences for saving
+ * and deleting strings
+ */
 public class WeatherStackPrefrences {
 
     /** the object of this class **/
@@ -13,7 +18,7 @@ public class WeatherStackPrefrences {
 
     /** the private constructor **/
      private WeatherStackPrefrences(Context context){
-        sharedPreferences = context.getSharedPreferences("Cocktail_pref", Context.MODE_PRIVATE);
+        sharedPreferences = context.getSharedPreferences("Shared_pref", Context.MODE_PRIVATE);
      }
 
     /** the method to get instance of this class **/

@@ -22,6 +22,7 @@ import algonquin.cst2335.finalapplication.WeatherStack.database.WeatherStackData
 /**
  * @author Imandeep Singh Sidhu
  * version 1
+ * This class holds all the data when it is fetched with internet connection
  */
 public class DetailOnlineFragment extends Fragment {
 

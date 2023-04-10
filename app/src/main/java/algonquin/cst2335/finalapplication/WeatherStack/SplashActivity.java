@@ -10,6 +10,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import algonquin.cst2335.finalapplication.R;
 
+/**
+ * @author Imandeep SIngh SIdhu
+ * This class represents the starting page for application
+ */
 public class SplashActivity extends AppCompatActivity {
 
     /** the Handler  **/

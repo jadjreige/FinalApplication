@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">ਮੌਸਮਸਟੈਕ</string>
+    <string name="weather">ਮੌਸਮ</string>
+    <string name="stack">ਸਟੈਕ</string>
+    <!-- TODO: ਇਸ ਪਲੇਸਹੋਲਡਰ ਟੈਕਸਟ ਨੂੰ ਹਟਾਓ ਜਾਂ ਬਦਲੋ -->
+    <string name="hello_blank_fragment">ਹੈਲੋ ਖਾਲੀ ਟੁਕੜਾ</string>
+    <string name="type_city_name">ਸ਼ਹਿਰ ਦਾ ਨਾਮ ਟਾਈਪ ਕਰੋ...</string>
+    <string name="search">ਖੋਜ</string>
+    <string name = "weather_">ਮੌਸਮ</string>
+    <string name = "of_your_city">ਤੁਹਾਡੇ ਸ਼ਹਿਰ ਦਾ।</string>
+    <string name="details">ਵੇਰਵੇ</string>
+    <string name = "observed_time"> ਨਿਰੀਖਣ ਕੀਤਾ ਸਮਾਂ</string>
+    <string name = "precipitation"> ਵਰਖਾ</string>
+    <string name="humidity">ਨਮੀ</string>
+    <string name="uv_index">UV ਸੂਚਕਾਂਕ</string>
+    <string name="pressure">ਦਬਾਅ</string>
+    <string name="visibility">ਦਰਸ਼ਨਯੋਗਤਾ</string>
+    <string name="wind_speed">ਹਵਾ ਦੀ ਗਤੀ</string>
+    <string name = "wind_degree">ਵਿੰਡ ਡਿਗਰੀ</string>
+    <string name = "wind_direction">ਹਵਾ ਦੀ ਦਿਸ਼ਾ</string>
+    <string name="cloud_cover">ਕਲਾਊਡ ਕਵਰ</string>
+    <string name = "feels_like_temp">ਟੈਂਪ ਵਾਂਗ ਮਹਿਸੂਸ ਹੁੰਦਾ ਹੈ।</string>
+    <string name="weather_description">ਮੌਸਮ ਦਾ ਵੇਰਵਾ</string>
+    <string name="save_detail">ਵੇਰਵਾ ਸੰਭਾਲੋ</string>
+    <string name="please_enter_city">ਕਿਰਪਾ ਕਰਕੇ ਸ਼ਹਿਰ ਦਾ ਨਾਮ ਦਰਜ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
+    <string name="weather_data_saved_message">ਮੌਸਮ ਡੇਟਾ ਸਫਲਤਾਪੂਰਵਕ ਸੁਰੱਖਿਅਤ ਕੀਤਾ ਗਿਆ...!</string>
+    <string name="milimeter"> ਮਿਲੀਮੀਟਰ</string>
+    <string name="milibar"> ਮਿਲੀਬਾਰ</string>
+    <string name = "kilometer"> ਕਿਲੋਮੀਟਰ</string>
+    <string name = "kmph"> KMPH</string>
+    <string name="celsius"> ਸੈਲ।</string>
+    <string name="help">ਮਦਦ</string>
+    <string name="confirmation_delete">ਕੀ ਤੁਸੀਂ ਡੇਟਾਬੇਸ ਤੋਂ ਇਸ ਰਿਕਾਰਡ ਨੂੰ ਮਿਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ?</string>
+    <string name="confirmation">ਪੁਸ਼ਟੀ</string>
+    <string name="yes">ਹਾਂ</string>
+    <string name="favourite_list">ਮਨਪਸੰਦ ਸੂਚੀ</string>
+    <string name="local_weather_stack">ਸਥਾਨਕ ਮੌਸਮ ਸਟੈਕ</string>
+    <string name="help_message">1.ਇਹ ਐਪਲੀਕੇਸ਼ਨ ਸਪਲੈਸ਼ ਸਕ੍ਰੀਨ ਦਿਖਾਉਣ ਤੋਂ ਬਾਅਦ ਹੋਮ ਸਕ੍ਰੀਨ ਦਿਖਾਉਂਦੀ ਹੈ।\n2. ਹੋਮ ਸਕ੍ਰੀਨ ਵਿੱਚ ਉਪਭੋਗਤਾ ਕਿਸੇ ਵੀ ਸਥਾਨ ਦਾ ਨਾਮ ਦਰਜ ਕਰ ਸਕਦਾ ਹੈ ਜਿਸਦਾ ਮੌਸਮ ਦਾ ਵੇਰਵਾ ਉਹ ਜਾਣਨਾ ਚਾਹੁੰਦਾ ਹੈ।\n3. ਜਿਵੇਂ ਹੀ ਉਪਭੋਗਤਾ ਸਥਾਨ ਦਾ ਨਾਮ ਦਰਜ ਕਰਦਾ ਹੈ ਅਤੇ ਖੋਜ ਕਰਦਾ ਹੈ, ਜੇਕਰ ਸਰਵਰ ਤੇ ਮੌਸਮ ਦਾ ਡੇਟਾ ਮਿਲਦਾ ਹੈ ਤਾਂ ਇਹ ਮੌਸਮ ਸੰਬੰਧੀ ਵੇਰਵੇ ਦਿਖਾਉਣ ਲਈ ਅਗਲੀ ਸਕ੍ਰੀਨ ਤੇ ਜਾਂਦਾ ਹੈ।\n4. ਵਿਸਤ੍ਰਿਤ ਸਕਰੀਨ ਵਿੱਚ ਅੰਤ ਵਿੱਚ ਸੇਵ ਬਟਨ ਹੁੰਦਾ ਹੈ ਜਿਸ ਨੂੰ ਦਬਾ ਕੇ ਉਪਭੋਗਤਾ ਸਥਾਨਕ ਡੇਟਾਬੇਸ ਵਿੱਚ ਸਥਾਨ ਦਾ ਨਾਮ ਅਤੇ ਸੰਬੰਧਿਤ ਮੌਸਮ ਡੇਟਾ ਨੂੰ ਸੁਰੱਖਿਅਤ ਕਰ ਸਕਦਾ ਹੈ।\n 5. ਉਪਭੋਗਤਾ ਮਨਪਸੰਦ ਸਕ੍ਰੀਨ ਵਿੱਚ ਸਟਾਰਟ (ਮਨਪਸੰਦ) ਨੂੰ ਦਬਾ ਕੇ ਖਾਸ ਮਿਤੀ ਲਈ ਮੌਸਮ ਡੇਟਾ ਦੇ ਨਾਲ ਸੁਰੱਖਿਅਤ ਕੀਤੇ ਸ਼ਹਿਰਾਂ ਦੀ ਜਾਂਚ ਕਰ ਸਕਦਾ ਹੈ ਟੂਲਬਾਰ ਤੋਂ ) ਬਟਨ\n 6. ਉਪਭੋਗਤਾ ਇੱਕ ਸੂਚੀ ਵਿੱਚ ਆਈਟਮ ਨੂੰ ਲੰਬੇ ਸਮੇਂ ਤੱਕ ਦਬਾ ਕੇ ਸਥਾਨਕ ਡੇਟਾਬੇਸ ਤੋਂ ਰਿਕਾਰਡ ਨੂੰ ਮਿਟਾ ਸਕਦਾ ਹੈ।\n 7. ਉਪਭੋਗਤਾ ਇੱਕ ਸੂਚੀ ਵਿੱਚ ਆਈਟਮ ਨੂੰ ਦਬਾਉਣ ਨਾਲ ਕਿਸੇ ਖਾਸ ਸ਼ਹਿਰ ਦੇ ਮੌਸਮ ਦੇ ਵੇਰਵੇ ਦੀ ਜਾਂਚ ਕਰ ਸਕਦਾ ਹੈ। </string>
+    <string name="no">ਨਹੀਂ</string>
+    <string name="record_deleted">ਰਿਕਾਰਡ ਸਫਲਤਾਪੂਰਵਕ ਮਿਟਾਇਆ ਗਿਆ</string>
+</resources>
