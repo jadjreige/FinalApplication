@@ -1,4 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/about"
+        android:icon="@drawable/mars_icon"
+        android:title="Help"
+        android:visible="true"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/kitten"
+        android:icon="@drawable/kitten_toolbar"
+        android:title="cat"
+        android:visible="true"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/weather"
+        android:icon="@drawable/weather_toolbar"
+        android:title="weather"
+        android:visible="true"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/newYork"
+        android:title="NY"
+        android:visible="true"
+        app:showAsAction="always" />
 
 </menu>
