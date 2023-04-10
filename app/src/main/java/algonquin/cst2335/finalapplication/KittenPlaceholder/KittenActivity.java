@@ -3,19 +3,19 @@ package algonquin.cst2335.finalapplication.KittenPlaceholder;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
 
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,7 +24,6 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,16 +36,11 @@ import com.android.volley.toolbox.Volley;
 import com.google.android.material.snackbar.Snackbar;
 import com.squareup.picasso.Picasso;
 
-import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
 
 
 import algonquin.cst2335.finalapplication.R;
@@ -71,6 +65,7 @@ public class KittenActivity extends AppCompatActivity {
     KittenImageViewModel kittenModel;
     List<String> urls = null;
     KittenImagesBinding imageBinding;
+    KittenDetailsFragment fragment = null;
 
 
 
@@ -91,12 +86,15 @@ public class KittenActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
+
         switch (item.getItemId()) {
             case R.id.help:
                 AlertDialog.Builder builder = new AlertDialog.Builder(KittenActivity.this);
                 builder.setMessage(R.string.helpKitten).setPositiveButton(null, null).
                         setNegativeButton("Okay", (dialog, cl) -> {
                         }).setTitle("Help").create().show();
+
+
                 break;
             case R.id.favourite1:
 
@@ -111,6 +109,8 @@ public class KittenActivity extends AppCompatActivity {
                 binding.height.setVisibility(View.INVISIBLE);
                 binding.submit.setVisibility(View.INVISIBLE);
                 binding.recyclerView.setVisibility(View.VISIBLE);
+
+
 
 
 
@@ -304,7 +304,7 @@ public class KittenActivity extends AppCompatActivity {
 
             removeImage.setOnClickListener(clk -> {
                 int position = getAbsoluteAdapterPosition();
-                Kitten deletedKitten = favKittens.get(getAbsoluteAdapterPosition());
+                Kitten deletedKitten = favKittens.get(position);
                 new Thread(() -> {
                 kDAO.deleteKitten(deletedKitten);
                 }).start();
@@ -313,8 +313,8 @@ public class KittenActivity extends AppCompatActivity {
                         .setAction("Undo", click -> {
 
                             new Thread(() -> {
-                                favKittens.add(position, deletedKitten);
                                 kDAO.insertKitten(deletedKitten);
+                                favKittens.add(position, deletedKitten);
                             }).start();
 
                             myAdapter.notifyItemInserted(position);
@@ -323,11 +323,19 @@ public class KittenActivity extends AppCompatActivity {
             });
             imageButton.setOnClickListener(clk -> {
 
-                int position = getAbsoluteAdapterPosition();
-                Kitten fragKitten = favKittens.get(position);
-                KittenDetailsFragment fragment = new KittenDetailsFragment(fragKitten);
-                getSupportFragmentManager().beginTransaction().replace(R.id.KittenFragmentLocation, fragment)
-                        .addToBackStack("").commit();
+                    int position = getAbsoluteAdapterPosition();
+                    Kitten fragKitten = favKittens.get(position);
+                    fragment = new KittenDetailsFragment(fragKitten);
+                    getSupportFragmentManager().beginTransaction().replace(R.id.KittenFragmentLocation, fragment)
+                            .addToBackStack("").show(fragment).commit();
+
+                imageButton.setOnClickListener(click -> {
+
+                    getSupportFragmentManager().beginTransaction().hide(fragment).commit();
+
+
+
+                });
 
             });
         }
