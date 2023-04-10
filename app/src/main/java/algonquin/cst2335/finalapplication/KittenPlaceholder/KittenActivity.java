@@ -312,13 +312,16 @@ public class KittenActivity extends AppCompatActivity {
                 Snackbar.make(imageButton, R.string.deletedKitten, Snackbar.LENGTH_LONG)
                         .setAction("Undo", click -> {
 
-                            new Thread(() -> {
-                                kDAO.insertKitten(deletedKitten);
+
                                 favKittens.add(position, deletedKitten);
-                            }).start();
+
 
                             myAdapter.notifyItemInserted(position);
                         }).show();
+                        new Thread(() -> {
+                        kDAO.insertKitten(deletedKitten);
+
+                }).start();
 
             });
             imageButton.setOnClickListener(clk -> {
