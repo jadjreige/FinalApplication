@@ -1,5 +1,19 @@
 <resources>
     <string name="app_name">FinalApplication</string>
+    <string name="helpKitten">"- Populate width and height fields with number between 0-999 then press         on find kitten to get a kitten image.    - Press on add to favourites to save image on your phone.                - Click on View my kittens to see all the kitten images saved on your phone.    - Press on a kitten from the list to load to screen or delete from device. "</string>
+    <string name="widthKitten">Enter picture width</string>
+    <string name="heightKitten">Enter picture height</string>
+    <string name="findKittens">FIND KITTENS</string>
+    <string name="toolbarHelpKitten">HELP</string>
+    <string name="toolViewKitten">View my kittens</string>
+    <string name="toolbarLookKitten">Find new kittens</string>
+    <string name="favouriteKitten">ADD IMAGE TO FAVOURITES</string>
+    <string name="addedKitten">Image added to favourites</string>
+    <string name="existKitten">Image already in favourites</string>
+    <string name="removeKitten">REMOVE</string>
+    <string name="deletedKitten">Kitten deleted from favourites</string>
+
+
     <string name="weather">Weather</string>
     <string name="stack">Stack</string>
     <!-- TODO: Remove or change this placeholder text -->

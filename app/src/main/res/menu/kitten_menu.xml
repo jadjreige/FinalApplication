@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <item
+        android:id="@+id/help"
+        android:enabled="true"
+        android:title="@string/toolbarHelpKitten"
+        android:visible="true"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/favourite1"
+        android:enabled="true"
+        android:title="@string/toolViewKitten"
+        android:visible="true"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/newImages"
+        android:title="@string/toolbarLookKitten" />
+
+</menu>
