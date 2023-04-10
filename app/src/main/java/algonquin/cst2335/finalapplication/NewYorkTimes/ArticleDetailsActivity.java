@@ -43,12 +43,18 @@ public class ArticleDetailsActivity extends AppCompatActivity {
         publicationDateTextView = findViewById(R.id.publication_date);
 
         Intent intent = getIntent();
+
+
+        // Retrieve the data from the intent
+        String headline = intent.getStringExtra("headline");
+        String webUrl = intent.getStringExtra("webUrl");
+        String pubDate = intent.getStringExtra("pubDate");
         Article article = (Article) intent.getSerializableExtra(ARTICLE_EXTRA);
 
-        if (article != null) {
-            headlineTextView.setText(article.getHeadline());
-            urlTextView.setText(article.getUrl());
-            publicationDateTextView.setText(article.getPublicationDate());
-        }
+
+            headlineTextView.setText(headline);
+            urlTextView.setText(webUrl);
+            publicationDateTextView.setText(pubDate);
+
     }
 }
