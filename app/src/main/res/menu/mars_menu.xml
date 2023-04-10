@@ -4,8 +4,6 @@
 
 
     <item
-
-
         android:id="@+id/save"
         android:icon="@android:drawable/ic_menu_save"
         android:title="Save"
@@ -14,7 +12,7 @@
     <item
         android:id="@+id/about"
         android:icon="@drawable/mars_icon"
-        android:title="About"
+        android:title="Help"
         android:visible="true"
         app:showAsAction="never" />
 
@@ -24,4 +22,24 @@
         android:title="Show Saved Photos"
         android:visible="true"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/kitten"
+        android:icon="@drawable/kitten_toolbar"
+        android:title="cat"
+        android:visible="true"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/weather"
+        android:icon="@drawable/weather_toolbar"
+        android:title="weather"
+        android:visible="true"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/newYork"
+        android:title="NY"
+        android:visible="true"
+        app:showAsAction="always" />
 </menu>

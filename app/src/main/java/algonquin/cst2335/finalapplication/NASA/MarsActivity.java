@@ -1,8 +1,10 @@
 package algonquin.cst2335.finalapplication.NASA;
 
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 import static com.android.volley.toolbox.Volley.newRequestQueue;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,7 +14,11 @@ import androidx.room.Room;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Environment;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,19 +32,25 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.google.android.material.snackbar.Snackbar;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
+import algonquin.cst2335.finalapplication.KittenPlaceholder.KittenActivity;
 import algonquin.cst2335.finalapplication.MainActivity;
+import algonquin.cst2335.finalapplication.NewYorkTimes.NewYorkActivity;
 import algonquin.cst2335.finalapplication.R;
+import algonquin.cst2335.finalapplication.WeatherStack.WeatherActivity;
 import algonquin.cst2335.finalapplication.databinding.ActivityMarsBinding;
 import algonquin.cst2335.finalapplication.databinding.ViewMarsResultsBinding;
 
@@ -83,13 +95,61 @@ public class MarsActivity extends AppCompatActivity {
 
                 });
 
+                Picasso.get().load(ph.getImageUrl()).into(new Target() {
+                    @Override
+                    public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                        String fileName = "marsPhoto-" + position + ".png";
+                        File file = new File(getFilesDir(), fileName);
+                        try {
+
+                            if (!file.exists()) {
+                                file.createNewFile();
+                            }
+
+
+                            FileOutputStream fos = new FileOutputStream(file);
+                            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+                            fos.flush();
+                            fos.close();
+                            Log.d(TAG, "Image saved to " + file);
+
+                        } catch (Exception e) {
+                            Log.e(TAG, "Error saving image: " + e.getMessage());
+
+                        }
+                    }
+
+                    @Override
+                    public void onBitmapFailed(Exception e, Drawable errorDrawable) {
+
+                    }
+
+                    @Override
+                    public void onPrepareLoad(Drawable placeHolderDrawable) {
+
+                    }
+                });
+
                 Toast.makeText(MarsActivity.this, "Saved photo", Toast.LENGTH_SHORT).show();
 
                 break;
 
             case R.id.about:
 
-                Toast.makeText(MarsActivity.this, "Nasa Mars Rover photos by Jad Jreige", Toast.LENGTH_SHORT).show();
+                AlertDialog.Builder builder = new AlertDialog.Builder(MarsActivity.this);
+                builder.setMessage("To use this application you need to enter a number between 1 and 1000 to load pictures from the rover that were taken on a certain day.\n" +
+                                "\n" +
+                                "By pressing on a picture, you will get an expanded version of that picture with the image URL that you can press to take you to the browser.\n" +
+                                "\n" +
+                                "Once you expand the picture, you can also save it to the database of favorites and for offline viewing.\n" +
+                                "\n" +
+                                "Finally, you can press the toolbar option to show your selected favorites and remove them.")
+                        .setTitle("Help")
+
+                        .setNegativeButton("ok", (dialog, cl) -> {
+
+                        })
+                        .create().show();
 
                 break;
 
@@ -101,6 +161,29 @@ public class MarsActivity extends AppCompatActivity {
 
                 break;
 
+            case R.id.kitten:
+
+                Intent kitten = new Intent(MarsActivity.this, KittenActivity.class);
+
+                startActivity(kitten);
+
+                break;
+
+            case R.id.weather:
+
+                Intent weather = new Intent(MarsActivity.this, WeatherActivity.class);
+
+                startActivity(weather);
+
+                break;
+
+            case R.id.newYork:
+
+                Intent ny = new Intent(MarsActivity.this, NewYorkActivity.class);
+
+                startActivity(ny);
+
+                break;
         }
 
         return true;

@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         Button nasa = findViewById(R.id.NASA);
         Button kitten = findViewById(R.id.kitten);
         Button newYork = findViewById(R.id.newYork);
