@@ -13,4 +13,5 @@
     <string name="existKitten">L\'image est déjà dans les favoris.</string>
     <string name="removeKitten">Supprimer</string>
     <string name="deletedKitten">Chaton supprimé des favoris</string>
+    <string name="KittenBack">Page Principale</string>
 </resources>

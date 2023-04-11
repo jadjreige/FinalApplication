@@ -13,6 +13,7 @@ import androidx.room.Room;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -43,9 +44,11 @@ import java.util.Date;
 import java.util.List;
 
 
+import algonquin.cst2335.finalapplication.MainActivity;
 import algonquin.cst2335.finalapplication.R;
 
 import algonquin.cst2335.finalapplication.databinding.ActivityKittenBinding;
+import algonquin.cst2335.finalapplication.databinding.KittenDetailsLayoutBinding;
 import algonquin.cst2335.finalapplication.databinding.KittenImagesBinding;
 
 
@@ -61,10 +64,7 @@ public class KittenActivity extends AppCompatActivity {
     private RecyclerView.Adapter myAdapter;
     List<Kitten> favKittens = new ArrayList<>();
     FileInputStream fOut = null;
-    List<Bitmap> kittenImages ;
     KittenImageViewModel kittenModel;
-    List<String> urls = null;
-    KittenImagesBinding imageBinding;
     KittenDetailsFragment fragment = null;
 
 
@@ -111,9 +111,6 @@ public class KittenActivity extends AppCompatActivity {
                 binding.recyclerView.setVisibility(View.VISIBLE);
 
 
-
-
-
                 //for (int i = 0; i < favKittens.size(); i++) {
 
                 //  URL = new StringBuilder().append("https://placekitten.com/").append(favKittens.get(i).getWidth()).append("/").append(favKittens.get(i).getHeight()).toString();
@@ -152,8 +149,13 @@ public class KittenActivity extends AppCompatActivity {
 
                 break;
             //TO-DO: what happens when menu items are clicked (help,view all kittens)
-        }
-                return true;
+
+            case R.id.mainPage:
+                    Intent mainPage = new Intent(KittenActivity.this, MainActivity.class);
+                startActivity(mainPage);
+                break;
+        }    return true;
+
         }
 
     @Override
@@ -161,7 +163,6 @@ public class KittenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         queue = Volley.newRequestQueue(this);
-
 
         binding = ActivityKittenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -311,17 +312,19 @@ public class KittenActivity extends AppCompatActivity {
                 myAdapter.notifyItemRemoved(getAbsoluteAdapterPosition());
                 Snackbar.make(imageButton, R.string.deletedKitten, Snackbar.LENGTH_LONG)
                         .setAction("Undo", click -> {
+                            favKittens.add(position, deletedKitten);
+                            new Thread(() -> {
 
+                                kDAO.insertKitten(deletedKitten);
 
-                                favKittens.add(position, deletedKitten);
-
+                            }).start();
 
                             myAdapter.notifyItemInserted(position);
-                        }).show();
-                        new Thread(() -> {
-                        kDAO.insertKitten(deletedKitten);
 
-                }).start();
+                        }).show();
+
+                        myAdapter.notifyDataSetChanged();
+
 
             });
             imageButton.setOnClickListener(clk -> {
@@ -332,13 +335,8 @@ public class KittenActivity extends AppCompatActivity {
                     getSupportFragmentManager().beginTransaction().replace(R.id.KittenFragmentLocation, fragment)
                             .addToBackStack("").show(fragment).commit();
 
-                imageButton.setOnClickListener(click -> {
-
-                    getSupportFragmentManager().beginTransaction().hide(fragment).commit();
 
 
-
-                });
 
             });
         }
