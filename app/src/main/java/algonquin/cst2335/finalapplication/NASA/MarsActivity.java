@@ -54,6 +54,11 @@ import algonquin.cst2335.finalapplication.WeatherStack.WeatherActivity;
 import algonquin.cst2335.finalapplication.databinding.ActivityMarsBinding;
 import algonquin.cst2335.finalapplication.databinding.ViewMarsResultsBinding;
 
+/**
+ * Class for the first mars activity that lets you type a number from 1 to 1000 to show the pictures taken on that certain date.
+ * It includes a recyclerView, fragment, toast, snackBar and alert dialog.
+ * @Author Jad Jreige
+ */
 public class MarsActivity extends AppCompatActivity {
 
     ArrayList<MarsDTO> marsList;
@@ -311,6 +316,9 @@ public class MarsActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * This inner class sets the items in the recyclerView and gets the position for the item when it is pressed.
+     */
     class MyRowHolder extends RecyclerView.ViewHolder {
 
         public MyRowHolder(@NonNull View itemView) {

@@ -7,6 +7,9 @@ import androidx.room.Query;
 
 import java.util.List;
 
+/**
+ * DAO interface.
+ */
 @Dao
 public interface MarsDAO {
 

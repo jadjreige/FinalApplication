@@ -31,6 +31,9 @@ import algonquin.cst2335.finalapplication.WeatherStack.WeatherActivity;
 import algonquin.cst2335.finalapplication.databinding.ActivityMarsDataBinding;
 import algonquin.cst2335.finalapplication.databinding.ViewMarsResultsBinding;
 
+/**
+ * This class hold all the saves photos and shows then in a recyclerView, and when the user presses on the item an alert dialog pops up to ask if they want to delete the photo.
+ */
 public class MarsDataActivity extends AppCompatActivity {
 
     ActivityMarsDataBinding binding;
@@ -159,7 +162,10 @@ public class MarsDataActivity extends AppCompatActivity {
 
         });
     }
-
+    /**
+     * This inner class sets the items in the recyclerView and gets the position for the item when it is pressed.
+     * In addition, when pressed it pops up an alert dialog to delete the message.
+     */
     class MyRowHolder extends RecyclerView.ViewHolder {
 
         ImageView image;

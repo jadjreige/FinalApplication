@@ -252,8 +252,10 @@ public class KittenActivity extends AppCompatActivity {
                     new Thread(() -> {
                         kDAO.insertKitten(kitten);
                     }).start();
+
+                    Toast.makeText(KittenActivity.this, R.string.addedKitten, Toast.LENGTH_SHORT).show();
                 }
-            Toast.makeText(KittenActivity.this, R.string.addedKitten, Toast.LENGTH_SHORT).show();
+
         });
 
         //binding.imageButton.setOnClickListener(click -> {

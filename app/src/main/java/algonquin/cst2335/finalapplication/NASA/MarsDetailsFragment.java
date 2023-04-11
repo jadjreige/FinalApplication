@@ -13,10 +13,17 @@ import com.squareup.picasso.Picasso;
 
 import algonquin.cst2335.finalapplication.databinding.MarsDetailsLayoutBinding;
 
+/**
+ * Class to gather the details for the fragment.
+ */
 public class MarsDetailsFragment extends Fragment {
 
     MarsDTO selected;
 
+    /**
+     * Constructor with MarsDTO parameter.
+     * @param s the MarsDTO information
+     */
     public MarsDetailsFragment(MarsDTO s) {
         selected = s;
     }

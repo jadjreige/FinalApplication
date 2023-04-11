@@ -4,6 +4,9 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+/**
+ * DTO class to get and set items to the database.
+ */
 @Entity
 public class MarsDTO {
 
