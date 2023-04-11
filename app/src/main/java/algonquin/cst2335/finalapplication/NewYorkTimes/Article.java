@@ -1,77 +1,57 @@
 package algonquin.cst2335.finalapplication.NewYorkTimes;
 
 import java.io.Serializable;
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
-/**
- * Article class that represents an article with headline, publication date, and URL.
- * This class implements Serializable to allow easy passing of Article objects between activities.
- */
+@Entity(tableName = "favorite_articles")
 public class Article implements Serializable {
-    /**
-     * Article attributes
-     */
-    private String headline;
-    private String pub_date;
-    private String web_url;
 
-    /**
-     * Constructs an Article object with the given headline, publication date, and URL.
-     * @param headline The headline of the article.
-     * @param pub_date The publication date of the article
-     * @param web_url  The URL of the article
-     * @param pubDate
-     */
-    public Article(String headline, String pub_date, String web_url, String pubDate) {
+    @PrimaryKey
+    @NonNull
+    private String id;
+    private String headline;
+    private String pubDate;
+    private String webUrl;
+
+    public Article(String headline, String pubDate, String webUrl, String id) {
+        this.id = id;
         this.headline = headline;
-        this.pub_date = pub_date;
-        this.web_url = web_url;
+        this.pubDate = pubDate;
+        this.webUrl = webUrl;
     }
 
-    /**
-     * Retrieves the headline of the article.
-     * @return The headline of the article
-     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getHeadline() {
         return headline;
     }
 
-    /**
-     * Sets the headline of the article.
-     * @param headline The new headline of the article
-     */
     public void setHeadline(String headline) {
         this.headline = headline;
     }
 
-    /**
-     * Retrieves the publication date of the article.
-     * @return The publication date of the article
-     */
-    public String getPublicationDate() {
-        return pub_date;
+    public String getPubDate() {
+        return pubDate;
     }
 
-    /**
-     * Sets the publication date of the article.
-     * @param pub_date The new publication date of the article
-     */
-    public void setPublicationDate(String pub_date) {
-        this.pub_date = pub_date;
+    public void setPubDate(String pubDate) {
+        this.pubDate = pubDate;
     }
 
-    /**
-     * Retrieves the URL of the article.
-     * @return The URL of the article
-     */
-    public String getUrl() {
-        return web_url;
+    public String getWebUrl() {
+        return webUrl;
     }
 
-    /**
-     * Sets the URL of the article.
-     * @param web_url The new URL of the article
-     */
-    public void setUrl(String web_url) {
-        this.web_url = web_url;
+    public void setWebUrl(String webUrl) {
+        this.webUrl = webUrl;
     }
 }
+
