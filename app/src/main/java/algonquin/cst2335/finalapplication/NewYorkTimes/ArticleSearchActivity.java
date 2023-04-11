@@ -124,8 +124,8 @@ public class ArticleSearchActivity extends AppCompatActivity implements ArticleA
         Intent intent = new Intent(this, ArticleDetailsActivity.class);
 
         intent.putExtra("headline", article.getHeadline());
-        intent.putExtra("webUrl", article.getUrl());
-        intent.putExtra("pubDate", article.getPublicationDate());
+        intent.putExtra("webUrl", article.getWebUrl());
+        intent.putExtra("pubDate", article.getPubDate());
 
         startActivity(intent);
     }
