@@ -319,11 +319,12 @@ public class KittenActivity extends AppCompatActivity {
 
 
                             myAdapter.notifyItemInserted(position);
-                        }).show();
-                        new Thread(() -> {
-                        kDAO.insertKitten(deletedKitten);
 
-                }).start();
+                            new Thread(() -> {
+                                kDAO.insertKitten(deletedKitten);
+                            }).start();
+                        }).show();
+
 
             });
             imageButton.setOnClickListener(clk -> {
